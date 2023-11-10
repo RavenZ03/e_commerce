@@ -25,7 +25,8 @@ function Home() {
     };
 
     const addToCart = (product) => {
-        setCart([...cart, product]);
+        const updatedProduct = { ...product, image: product.images[0] };
+        setCart([...cart, updatedProduct]);
     };
 
     return (
@@ -60,9 +61,11 @@ function Home() {
                         </ul>
                         <div className='buttons'>
                             <a href='' className='btn btn-outline-light ms-2'>
-                                <i className='fa fa-shopping-cart me-1'></i> Cart (0)</a>
+                                <i className='fa fa-shopping-cart me-1'></i> Cart ({cart.length})
+                            </a>
                             <a href='' className='btn btn-outline-light ms-2'>
-                                <i className='fa fa-sign-out me-1'></i> Logout</a>
+                                <i className='fa fa-sign-out me-1'></i> Logout
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -110,12 +113,10 @@ function Home() {
                 </div>
 
             )}
-
+            <Cart cart={cart} setCart={setCart} />
         </div>
     );
+
 }
 
 export default Home;
-
-
-

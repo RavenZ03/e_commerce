@@ -10,7 +10,7 @@ function App() {
   const [loginError, setLoginError] = useState(false);
   const authorizedUsers = [
     { username: 'raf', password: '123' },
-    { username: 'user2', password: 'password2' },
+    { username: 'faskal', password: '123' },
   ];
 
   const handleLogin = () => {
@@ -34,7 +34,7 @@ function App() {
           <div className="login-container">
             <h2 className="login-heading">Login</h2>
             {loginError && (
-              <div className="error-message">Login failed. Please check your credentials.</div>
+              <div className="error-message">Invalid Username or Password</div>
             )}
             <form className="login-form">
               <div className={`form-group ${loginError ? 'error' : ''}`}>
